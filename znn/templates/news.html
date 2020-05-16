@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>ZNN News</title>
+  <meta charset="UTF-8">
+  <link href="https://getbootstrap.com/docs/4.4/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      padding-top: 3rem;
+    }
+
+    .starter-template {
+      padding: 3rem 1.5rem;
+      text-align: justify;
+    }
+
+    h1 {
+      text-transform: uppercase
+    }
+
+    img {
+      width: 350px;
+      height: 350px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="#">ZNN</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item"><a class="nav-link" href="/news.php">Latest News</a></li>
+        <li class="nav-item"><a class="nav-link" href="/liveness.php">Liveness</a></li>
+        <li class="nav-item"><a class="nav-link" href="/readiness.php">Readiness</a></li>
+        <li class="nav-item"><a class="nav-link" target="_blank" href="https://github.com/cmendesce/znn">Github</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="starter-template">
+    <h1>{{news['title']}}</h1>
+    <article class="mb-2">
+      {{news['text']}}
+    </article>
+
+    <img class="img-thumbnail rounded mr-1" src="data:image/jpg;base64,{{news['image_base64']}}" />
+
+    <footer>
+      news id <span class="badge badge-primary">{{news["id"]}}</span>
+      <br>
+      fidelity <span class="badge badge-primary">{{fidelity}}</span>
+      <br>
+      render time <span class="badge badge-primary">{{render_time}} seconds</span>
+    </footer>
+</body>
+
+</html>

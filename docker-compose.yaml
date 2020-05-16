@@ -1,0 +1,68 @@
+version: '3.7'
+
+services:
+  text:
+    image: cmendes/znn-python:text
+    restart: always
+    depends_on: 
+      - db
+    ports:
+      - 5000:5000
+    env_file:
+      - znn.env
+  20k:
+    image: cmendes/znn-python:20k
+    restart: always
+    depends_on: 
+      - db
+    ports:
+      - 5001:5000
+    env_file:
+      - znn.env
+  200k:
+    image: cmendes/znn-python:200k
+    restart: always
+    depends_on: 
+      - db
+    ports:
+      - 5002:5000
+    env_file:
+      - znn.env
+  400k:
+    image: cmendes/znn-python:400k
+    restart: always
+    depends_on: 
+      - db
+    ports:
+      - 5003:5000
+    env_file:
+      - znn.env
+  600k:
+    image: cmendes/znn-python:600k
+    restart: always
+    depends_on: 
+      - db
+    ports:
+      - 5004:5000
+    env_file:
+      - znn.env
+  800k:
+    image: cmendes/znn-python:800k
+    restart: always
+    depends_on: 
+      - db
+    ports:
+      - 5005:5000
+    env_file:
+      - znn.env
+  db:
+    image: mysql:5.7
+    restart: always
+    volumes:
+      - ./db.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: znn
+      
