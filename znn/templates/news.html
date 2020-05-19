@@ -32,23 +32,23 @@
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item"><a class="nav-link" href="/news.php">Latest News</a></li>
-        <li class="nav-item"><a class="nav-link" href="/liveness.php">Liveness</a></li>
-        <li class="nav-item"><a class="nav-link" href="/readiness.php">Readiness</a></li>
+        <li class="nav-item"><a class="nav-link" href="/liveness">Liveness</a></li>
+        <li class="nav-item"><a class="nav-link" href="/readiness">Readiness</a></li>
         <li class="nav-item"><a class="nav-link" target="_blank" href="https://github.com/cmendesce/znn">Github</a></li>
       </ul>
     </div>
   </nav>
 
   <div class="starter-template">
-    <h1>{{news['title']}}</h1>
+    <h1>{{news['news_title']}}</h1>
     <article class="mb-2">
-      {{news['text']}}
+      {{news['news_text']}}
     </article>
 
     <img class="img-thumbnail rounded mr-1" src="data:image/jpg;base64,{{news['image_base64']}}" />
 
     <footer>
-      news id <span class="badge badge-primary">{{news["id"]}}</span>
+      news id <span class="badge badge-primary">{{news["news_id"]}}</span>
       <br>
       fidelity <span class="badge badge-primary">{{fidelity}}</span>
       <br>

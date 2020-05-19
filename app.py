@@ -1,12 +1,12 @@
 from flask import Flask
 from znn.routes import znn
-from werkzeug.middleware.dispatcher import DispatcherMiddleware
-from prometheus_client import make_wsgi_app
+
+from prometheus_flask_exporter.multiprocess import GunicornPrometheusMetrics
 
 app = Flask(__name__, template_folder='znn/templates')
 app.register_blueprint(znn)
 
-# Add prometheus wsgi middleware to route /metrics requests
-app_dispatch = DispatcherMiddleware(app, {
-    '/metrics': make_wsgi_app()
-})
+metrics = GunicornPrometheusMetrics(app)
+
+if __name__ == '__main__':
+    app.run(debug=False, port=5000)
