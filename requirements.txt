@@ -3,3 +3,4 @@ prometheus-client==0.7.1
 PyMySQL==0.9.3
 gunicorn==20.0.4
 prometheus-flask-exporter==0.13.0
+meinheld==1.0.2

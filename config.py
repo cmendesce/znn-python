@@ -2,9 +2,11 @@
 import os
 import multiprocessing
 from prometheus_flask_exporter.multiprocess import GunicornPrometheusMetrics
+import meinheld
 
 loglevel = 'info'
 workers = multiprocessing.cpu_count() * 2 + 1
+worker_class= 'meinheld.gmeinheld.MeinheldWorker'
 
 def when_ready(server):
     GunicornPrometheusMetrics.start_http_server_when_ready(int(os.getenv('METRICS_PORT')))
