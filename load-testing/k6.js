@@ -29,6 +29,6 @@ export let options = {
 };
 
 export default function() {
-    let res = http.get("http://nginx-ingress.default.svc/news");
+    let res = http.get("http://nginx-ingress.default.svc/news.php");
     check(res, { "status is 200": (r) => r.status === 200 });
 }
