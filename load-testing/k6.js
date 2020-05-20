@@ -4,25 +4,25 @@ import { check } from "k6";
 export let options = {
     stages: [
 
-        { duration: "30s", target: 500 },
+        { duration: "30s", target: 50 },
 
-        { duration: "60s", target: 500 },
+        { duration: "60s", target: 50 },
 
-        { duration: "10s", target: 700 },
+        { duration: "10s", target: 70 },
 
-        { duration: "60s", target: 700 },
+        { duration: "60s", target: 70 },
 
-        { duration: "10s", target: 900 },
+        { duration: "10s", target: 90 },
 
-        { duration: "60s", target: 900 },
+        { duration: "60s", target: 90 },
 
-        { duration: "10s", target: 700 },
+        { duration: "10s", target: 70 },
 
-        { duration: "60s", target: 700 },
+        { duration: "60s", target: 70 },
 
-        { duration: "10s", target: 500 },
+        { duration: "10s", target: 50 },
 
-        { duration: "60s", target: 500 },
+        { duration: "60s", target: 50 },
 
         { duration: "10s", target: 0 }
     ]
