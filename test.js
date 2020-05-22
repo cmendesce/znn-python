@@ -28,5 +28,5 @@ export let options = {
 };
 
 export default function () {
-  const response = http.get("https://test-api.k6.io/");
+  const response = http.get("http://znn:5000/news");
 };
