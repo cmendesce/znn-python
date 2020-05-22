@@ -12,6 +12,8 @@ export let options = {
         { duration: "20s", target: 20 },
 
         { duration: "20s", target: 40 },
+        
+        { duration: "20s", target: 40 },
 
         { duration: "20s", target: 40 },
 
